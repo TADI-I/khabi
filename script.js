@@ -18,6 +18,7 @@ function showPage(name) {
 // ═══ MOBILE NAV TOGGLE ═══
 document.getElementById('navToggle').addEventListener('click', () => {
   document.getElementById('navLinks').classList.toggle('open');
+  document.getElementById('navToggle').classList.toggle('open');
 });
 
 // ═══ NAV SCROLL SHADOW ═══
