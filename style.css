@@ -63,15 +63,20 @@ img { max-width: 100%; display: block; }
 
 .nav-logo {
   display: flex;
-  flex-direction: column;
-  line-height: 1;
-  gap: 2px;
+  align-items: center;
+  gap: 10px;
 }
 .nav-logo-img {
   height: 40px;
   max-height: 40px;
   width: auto;
   object-fit: contain;
+}
+.nav-logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 2px;
 }
 .logo-khabi {
   font-family: var(--font-display);
