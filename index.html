@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khabi Engineering Pty Ltd</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- SVG SPRITE — all icons defined once, used anywhere via <use> -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- gear / engineering -->
+    <symbol id="icon-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </symbol>
+    <!-- crane / construction -->
+    <symbol id="icon-crane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 20h20M7 20V8l5-5 5 5v12M12 3v5M9 20v-5h6v5"/>
+    </symbol>
+    <!-- broom / cleaning -->
+    <symbol id="icon-broom" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21l9-9M15.5 3.5a2.12 2.12 0 0 1 3 3L7 18l-4 1 1-4L15.5 3.5z"/>
+    </symbol>
+    <!-- truck / equipment -->
+    <symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+    </symbol>
+    <!-- target / vision -->
+    <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+    </symbol>
+    <!-- rocket / mission -->
+    <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+    </symbol>
+    <!-- graduation cap / bursaries -->
+    <symbol id="icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3.33 2 8.67 2 12 0v-5"/>
+    </symbol>
+    <!-- wrench / skills -->
+    <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+    </symbol>
+    <!-- briefcase / jobs -->
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M1 13h22"/>
+    </symbol>
+    <!-- handshake / support -->
+    <symbol id="icon-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 7.65l1.06 1.06L12 21.23l7.36-7.36 1.06-1.06a5.4 5.4 0 0 0 0-7.65v0z"/>
+    </symbol>
+    <!-- pin / location -->
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <!-- phone -->
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.71 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.27 6.27l.96-.96a2 2 0 0 1 2.11-.45c.9.35 1.85.58 2.81.71A2 2 0 0 1 22 16.92z"/>
+    </symbol>
+    <!-- mail -->
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <!-- globe -->
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </symbol>
+    <!-- building / government -->
+    <symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+    </symbol>
+    <!-- factory -->
+    <symbol id="icon-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 20V8l6 4V8l6 4V4l8 4v12H2z"/><path d="M6 20v-4h4v4M14 20v-4h4v4"/>
+    </symbol>
+    <!-- hammer / hardware -->
+    <symbol id="icon-hammer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 12l-8.5 8.5a2.12 2.12 0 0 1-3-3L12 9"/><path d="M17.64 15L22 10.64M20.35 6.22l-2.13-2.12a2 2 0 0 0-2.83 0L13 6.46l4.59 4.59 2.76-2.76a2 2 0 0 0 0-2.07z"/>
+    </symbol>
+    <!-- person / private -->
+    <symbol id="icon-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+    </symbol>
+    <!-- camera / gallery -->
+    <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/>
+    </symbol>
+    <!-- check -->
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <!-- close/x -->
+    <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" onclick="showPage('home')">
+        <img src="images/logo.png" alt="Khabi Engineering" class="nav-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span class="nav-logo-text" style="display:none">
+          <span class="logo-khabi">KHABI</span>
+          <span class="logo-eng">ENGINEERING</span>
+        </span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
+        <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
+        <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
+        <li><a href="#" onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
+        <li><a href="#" onclick="showPage('contact')" data-page="contact" class="nav-cta">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ HOME PAGE ═══════════════ -->
+  <div id="page-home" class="page active">
+
+    <section class="hero">
+      <div class="hero-slash"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">100% Black-Owned · Est. 2013 · Middelburg, Mpumalanga</p>
+        <h1 class="hero-title">Building South Africa.<br/><span class="accent">One Contract at a Time.</span></h1>
+        <p class="hero-sub">Engineering, Construction, Manufacturing &amp; Cleaning Services for public and private sector clients across South Africa.</p>
+        <div class="hero-btns">
+          <button class="btn-primary" onclick="showPage('services')">Our Services</button>
+          <button class="btn-outline" onclick="showPage('contact')">Get a Quote</button>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2013</span><span class="stat-label">Established</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Years in Cleaning</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Private Clients</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">B-BBEE Aligned</span></div>
+      </div>
+    </section>
+
+    <section class="home-services">
+      <div class="container">
+        <p class="section-eyebrow">What We Do</p>
+        <h2 class="section-title">Integrated Services.<br/>Delivered with Integrity.</h2>
+        <div class="services-grid home-grid">
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon"><svg><use href="#icon-gear"/></svg></div>
+            <h3>Engineering &amp; Construction</h3>
+            <p>Building and civil construction, renovations, steel and aluminium works across South Africa.</p>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon"><svg><use href="#icon-crane"/></svg></div>
+            <h3>Manufacturing</h3>
+            <p>Bricks manufacturing and structural fabrication to support large-scale projects.</p>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon"><svg><use href="#icon-broom"/></svg></div>
+            <h3>Cleaning Services</h3>
+            <p>Industrial plant cleaning, site establishment, and regular cleaning for private clients.</p>
+          </div>
+          <div class="service-card" onclick="showPage('services')">
+            <div class="service-icon"><svg><use href="#icon-truck"/></svg></div>
+            <h3>Equipment Supply</h3>
+            <p>Supply of industrial equipment, furniture, and sourcing of yellow plant machinery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-compliance">
+      <div class="container compliance-row">
+        <div class="compliance-text">
+          <p class="section-eyebrow">Compliance &amp; Certification</p>
+          <h2 class="section-title">Qualified. Certified. Ready to Deliver.</h2>
+          <p>Khabi Engineering Pty Ltd meets all regulatory and industry standards required for government and private sector contracts.</p>
+          <ul class="compliance-list">
+            <li><span class="check-icon"><svg><use href="#icon-check"/></svg></span> NHBRC Registered</li>
+            <li><span class="check-icon"><svg><use href="#icon-check"/></svg></span> CIDB Compliant (per tender requirements)</li>
+            <li><span class="check-icon"><svg><use href="#icon-check"/></svg></span> B-BBEE Aligned Suppliers</li>
+            <li><span class="check-icon"><svg><use href="#icon-check"/></svg></span> 100% Black-Owned Entity</li>
+          </ul>
+          <button class="btn-primary" onclick="showPage('contact')">Work With Us</button>
+        </div>
+        <div class="compliance-accent">
+          <div class="accent-box">
+            <p class="accent-big">100%</p>
+            <p class="accent-label">Black-Owned<br/>South African Company</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-csr">
+      <div class="container">
+        <p class="section-eyebrow">Social Responsibility</p>
+        <h2 class="section-title">More Than Construction.</h2>
+        <p class="csr-sub">We actively fight unemployment, skills shortages, and poverty through meaningful community investment.</p>
+        <div class="csr-grid">
+          <div class="csr-item">
+            <span class="csr-icon"><svg><use href="#icon-grad"/></svg></span>
+            <p>Bursaries for Youth</p>
+          </div>
+          <div class="csr-item">
+            <span class="csr-icon"><svg><use href="#icon-wrench"/></svg></span>
+            <p>Skills Development</p>
+          </div>
+          <div class="csr-item">
+            <span class="csr-icon"><svg><use href="#icon-briefcase"/></svg></span>
+            <p>Job Creation</p>
+          </div>
+          <div class="csr-item">
+            <span class="csr-icon"><svg><use href="#icon-handshake"/></svg></span>
+            <p>Small Business Support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════ ABOUT PAGE ═══════════════ -->
+  <div id="page-about" class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-slash"></div>
+      <div class="container">
+        <p class="section-eyebrow">About Khabi Engineering</p>
+        <h1 class="page-hero-title">Built on Expertise.<br/><span class="accent">Driven by Purpose.</span></h1>
+      </div>
+    </section>
+
+    <section class="about-overview">
+      <div class="container about-grid">
+        <div class="about-text">
+          <p class="section-eyebrow">Company Overview</p>
+          <h2 class="section-title">Who We Are</h2>
+          <p>Khabi Engineering Pty Ltd is a 100% Black-owned South African company established in 2013 and based in Middelburg, Mpumalanga. We deliver integrated Engineering, Construction, Manufacturing, Cleaning Services, and supply of Industrial Equipment to public and private sector clients across South Africa.</p>
+          <p>We are committed not only to delivering quality services but also to playing a transformative role in society — addressing unemployment, skills shortages, poverty, and social challenges.</p>
+        </div>
+        <div class="about-vision-mission">
+          <div class="vm-card">
+            <h3>
+              <span class="vm-icon"><svg><use href="#icon-target"/></svg></span>
+              Our Vision
+            </h3>
+            <p>To be a forefront Engineering &amp; Construction industry and cleaning service provider, recognised for excellence, professionalism, and meaningful contribution to skills transfer and socio-economic growth.</p>
+          </div>
+          <div class="vm-card">
+            <h3>
+              <span class="vm-icon"><svg><use href="#icon-rocket"/></svg></span>
+              Our Mission
+            </h3>
+            <ul>
+              <li>Deliver quality services right the first time</li>
+              <li>Empower communities through skills development</li>
+              <li>Build a competitive, sustainable company</li>
+              <li>Contribute positively to the corporate and social environment</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-md">
+      <div class="container">
+        <p class="section-eyebrow">Leadership</p>
+        <h2 class="section-title">Managing Director</h2>
+        <div class="md-card">
+          <div class="md-badge">MD</div>
+          <div class="md-info">
+            <h3>Mr. Ayanda Bafo Khabingesi</h3>
+            <p class="md-title">Managing Director &amp; Founder</p>
+            <p>A qualified engineering professional with extensive experience across multiple sectors, Mr. Khabingesi brings strong technical expertise, leadership, and training experience to the organisation.</p>
+            <div class="md-quals">
+              <p class="quals-label">Qualifications</p>
+              <ul>
+                <li>National Diploma in Mechanical Engineering — Mangosuthu University of Technology (2005)</li>
+                <li>B-Tech in Mechanical Engineering (DUT / UJ / UNISA)</li>
+                <li>Diploma in Education, Training and Development Practices (ETDP)</li>
+                <li>Registered HR Associate Practitioner</li>
+              </ul>
+            </div>
+            <div class="md-experience">
+              <p class="quals-label">Career Highlights</p>
+              <div class="exp-tags">
+                <span>Eskom — Training Manager</span>
+                <span>Eskom — Senior Instructor</span>
+                <span>Coastal KZN College — Lecturer</span>
+                <span>Spoornet — Junior Technician</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values">
+      <div class="container">
+        <p class="section-eyebrow">Core Values</p>
+        <h2 class="section-title">What Guides Us</h2>
+        <div class="values-grid">
+          <div class="value-card"><h4>Professionalism</h4><p>Competent project planning, skilled workmanship, and respect for all stakeholders.</p></div>
+          <div class="value-card"><h4>Integrity</h4><p>Honest, ethical dealings — free from corruption, misrepresentation, or unethical influence.</p></div>
+          <div class="value-card"><h4>Transparency</h4><p>Open and honest communication in procurement, financial management, and reporting.</p></div>
+          <div class="value-card"><h4>Accountability</h4><p>Full responsibility for actions, performance, and outcomes. Commitments met on time.</p></div>
+          <div class="value-card"><h4>Responsibility</h4><p>Safe working conditions, OHS compliance, and environmentally responsible practices.</p></div>
+          <div class="value-card"><h4>Trustworthiness</h4><p>Reliable, quality workmanship and dependable service that builds enduring partnerships.</p></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════ SERVICES PAGE ═══════════════ -->
+  <div id="page-services" class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-slash"></div>
+      <div class="container">
+        <p class="section-eyebrow">What We Offer</p>
+        <h1 class="page-hero-title">Services Built<br/><span class="accent">for Every Sector.</span></h1>
+      </div>
+    </section>
+
+    <section class="services-full">
+      <div class="container">
+        <div class="service-detail">
+          <div class="service-number">01</div>
+          <div class="service-detail-content">
+            <h2>Building &amp; Civil Construction</h2>
+            <p>We deliver high-quality building and civil construction services for government housing projects, private developments, and infrastructure. With a proven track record including RDP housing projects across the Eastern Cape, KwaZulu-Natal, and Mpumalanga, our team has the experience to handle complex, multi-year contracts.</p>
+            <ul>
+              <li>Low-cost housing (RDP) construction</li>
+              <li>Double storey residential builds</li>
+              <li>Infrastructure and civil works</li>
+              <li>Site establishment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-detail reverse">
+          <div class="service-number">02</div>
+          <div class="service-detail-content">
+            <h2>Renovations</h2>
+            <p>Full renovation services for commercial, industrial, and residential properties. From plastering and painting to structural modifications — we restore, upgrade, and transform existing structures.</p>
+            <ul>
+              <li>Commercial &amp; industrial renovations</li>
+              <li>Plastering and painting</li>
+              <li>School and institutional facilities</li>
+              <li>Office park upgrades</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-detail">
+          <div class="service-number">03</div>
+          <div class="service-detail-content">
+            <h2>Cleaning Services</h2>
+            <p>Our cleaning division has 7+ years of operation serving 15 private clients on a recurring basis. We specialise in industrial plant cleaning with deep exposure to Samancor facilities including M1–M4, Crusher plant, PSP, Bunkers, and Workshops.</p>
+            <ul>
+              <li>Industrial plant cleaning (Samancor-experienced)</li>
+              <li>Site establishment &amp; cleaning</li>
+              <li>Housekeeping services</li>
+              <li>Regular maintenance cleaning for private clients</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-detail reverse">
+          <div class="service-number">04</div>
+          <div class="service-detail-content">
+            <h2>Manufacturing</h2>
+            <p>Bricks manufacturing and structural steel and aluminium fabrication to support construction projects and supply clients directly.</p>
+            <ul>
+              <li>Bricks manufacturing</li>
+              <li>Steel works &amp; fabrication</li>
+              <li>Aluminium works</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-detail">
+          <div class="service-number">05</div>
+          <div class="service-detail-content">
+            <h2>Equipment &amp; Machinery Supply</h2>
+            <p>We source and supply industrial equipment, furniture, and yellow plant machinery to construction and industrial clients on a contract basis.</p>
+            <ul>
+              <li>Industrial equipment supply</li>
+              <li>Furniture sourcing &amp; delivery</li>
+              <li>Yellow plant &amp; construction machinery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-market">
+      <div class="container">
+        <p class="section-eyebrow">Target Market</p>
+        <h2 class="section-title">Who We Serve</h2>
+        <div class="market-grid">
+          <div class="market-card">
+            <span class="market-icon"><svg><use href="#icon-building"/></svg></span>
+            <p>Local, Provincial &amp; National Government</p>
+          </div>
+          <div class="market-card">
+            <span class="market-icon"><svg><use href="#icon-factory"/></svg></span>
+            <p>Factories &amp; Industrial Clients</p>
+          </div>
+          <div class="market-card">
+            <span class="market-icon"><svg><use href="#icon-hammer"/></svg></span>
+            <p>Hardware Suppliers</p>
+          </div>
+          <div class="market-card">
+            <span class="market-icon"><svg><use href="#icon-person"/></svg></span>
+            <p>Private Individuals &amp; Developers</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ═══════════════ GALLERY PAGE ═══════════════ -->
+  <div id="page-gallery" class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-slash"></div>
+      <div class="container">
+        <p class="section-eyebrow">Our Work</p>
+        <h1 class="page-hero-title">Projects &amp;<br/><span class="accent">On-Site Gallery.</span></h1>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="construction">Construction</button>
+          <button class="filter-btn" data-filter="cleaning">Cleaning</button>
+          <button class="filter-btn" data-filter="renovation">Renovation</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-1.jpg" alt="Construction project" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Construction</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="cleaning">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/cleaning-1.jpg" alt="Plant cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Plant Cleaning</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-2.jpg" alt="RDP housing" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>RDP Housing</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="cleaning">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/cleaning-2.jpg" alt="Site cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Site Cleaning</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-1.jpg" alt="Renovation work" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Renovation</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-3.jpg" alt="Civil construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Civil Works</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-2.jpg" alt="Painting works" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Painting &amp; Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="cleaning">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/cleaning-3.jpg" alt="Industrial cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Industrial Cleaning</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-4.jpg" alt="Double storey" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Double Storey</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="gallery-note">
+          <svg width="16" height="16" style="vertical-align:-3px;margin-right:6px"><use href="#icon-camera"/></svg>
+          Add your photos by placing them in the <code>images/gallery/</code> folder.
+        </p>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">
+        <svg width="24" height="24"><use href="#icon-x"/></svg>
+      </button>
+      <img src="" alt="" id="lightboxImg" />
+      <p id="lightboxCaption"></p>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ CONTACT PAGE ═══════════════ -->
+  <div id="page-contact" class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-slash"></div>
+      <div class="container">
+        <p class="section-eyebrow">Get in Touch</p>
+        <h1 class="page-hero-title">Let's Build<br/><span class="accent">Something Together.</span></h1>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <h2>Contact Details</h2>
+          <div class="contact-item">
+            <span class="contact-icon"><svg width="22" height="22"><use href="#icon-pin"/></svg></span>
+            <div>
+              <p class="contact-label">Location</p>
+              <p>Middelburg, Mpumalanga<br/>South Africa</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><svg width="22" height="22"><use href="#icon-phone"/></svg></span>
+            <div>
+              <p class="contact-label">Phone</p>
+              <p><a href="tel:+27000000000">+27 (0) 00 000 0000</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><svg width="22" height="22"><use href="#icon-mail"/></svg></span>
+            <div>
+              <p class="contact-label">Email</p>
+              <p><a href="mailto:info@khabingesieng.com">info@khabingesieng.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon"><svg width="22" height="22"><use href="#icon-globe"/></svg></span>
+            <div>
+              <p class="contact-label">Website</p>
+              <p>www.khabingesieng.com</p>
+            </div>
+          </div>
+          <div class="contact-compliance">
+            <p class="quals-label">Compliance Credentials</p>
+            <p>NHBRC Registered · CIDB Compliant · B-BBEE Aligned</p>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <h2>Send Us a Message</h2>
+          <div class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="fname" placeholder="Your full name" />
+              </div>
+              <div class="form-group">
+                <label>Company</label>
+                <input type="text" id="fcompany" placeholder="Your company (optional)" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="femail" placeholder="your@email.com" />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="fphone" placeholder="+27 ..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="fservice">
+                <option value="">Select a service...</option>
+                <option>Building &amp; Civil Construction</option>
+                <option>Renovations</option>
+                <option>Cleaning Services</option>
+                <option>Manufacturing</option>
+                <option>Equipment &amp; Machinery Supply</option>
+                <option>General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea id="fmessage" rows="5" placeholder="Tell us about your project or enquiry..."></textarea>
+            </div>
+            <button class="btn-primary full-width" onclick="submitForm()">Send Enquiry</button>
+            <p class="form-note" id="formNote"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Khabi Engineering" class="footer-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span class="footer-logo-text" style="display:none">
+          <span class="logo-khabi">KHABI</span>
+          <span class="logo-eng">ENGINEERING PTY LTD</span>
+        </span>
+        <p>100% Black-Owned · Est. 2013<br/>Middelburg, Mpumalanga</p>
+      </div>
+      <div class="footer-links">
+        <p class="footer-heading">Navigation</p>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About</a>
+        <a href="#" onclick="showPage('services')">Services</a>
+        <a href="#" onclick="showPage('gallery')">Gallery</a>
+        <a href="#" onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-services">
+        <p class="footer-heading">Services</p>
+        <p>Building &amp; Civil Construction</p>
+        <p>Renovations</p>
+        <p>Cleaning Services</p>
+        <p>Manufacturing</p>
+        <p>Equipment Supply</p>
+      </div>
+      <div class="footer-compliance">
+        <p class="footer-heading">Compliance</p>
+        <p>NHBRC Registered</p>
+        <p>CIDB Compliant</p>
+        <p>B-BBEE Aligned</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Khabi Engineering Pty Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
