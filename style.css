@@ -75,6 +75,20 @@ img { max-width: 100%; display: block; }
 .nav-links a:hover { color: var(--amber); }
 .nav-links a.nav-cta { background: var(--amber); color: var(--charcoal); font-weight: 700; }
 .nav-links a.nav-cta:hover { background: var(--amber-dark); }
+.nav-links a.active {
+  color: var(--amber);
+  background: rgba(248, 155, 0, 0.1);
+  border-bottom: 2px solid var(--amber);
+  padding-bottom: 6px;
+}
+
+.nav-links a.nav-cta.active {
+  background: var(--amber-dark);
+  color: var(--charcoal);
+  border-bottom: none;
+  padding-bottom: 8px;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -320,6 +334,114 @@ img { max-width: 100%; display: block; }
 .market-icon svg { width: 26px; height: 26px; }
 .market-card p { color: var(--steel-light); font-size: 14px; line-height: 1.5; }
 
+/* ═══ GALLERY ═══ */
+.gallery-section { padding: 80px 0; background: var(--white); }
+.gallery-filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+.filter-btn {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  background: transparent;
+  border: 2px solid #ddd;
+  color: var(--steel);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { border-color: var(--amber); color: var(--amber); }
+.filter-btn.active { background: var(--amber); border-color: var(--amber); color: var(--charcoal); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-item { overflow: hidden; cursor: pointer; }
+.gallery-item.hidden { display: none; }
+.gallery-img-wrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: #e0e0e0;
+}
+.gallery-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.gallery-img-wrap.img-placeholder::after {
+  content: '📷 Image Coming Soon';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--off-white);
+  color: var(--steel);
+  font-family: var(--font-display);
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: 2px dashed var(--steel-light);
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(26,26,26,0.9), transparent);
+  padding: 16px 14px 12px;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+}
+.gallery-item:hover .gallery-overlay { transform: translateY(0); }
+.gallery-overlay span {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--amber);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gallery-note {
+  margin-top: 32px;
+  text-align: center;
+  color: var(--steel);
+  font-size: 14px;
+  padding: 16px;
+  background: var(--off-white);
+  border: 1px dashed var(--steel-light);
+}
+.gallery-note code { background: #e4e4e4; padding: 2px 6px; font-size: 13px; }
+
+/* ═══ LIGHTBOX ═══ */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 80vh; object-fit: contain; }
+.lightbox p { color: var(--steel-light); margin-top: 16px; font-size: 14px; }
+.lightbox-close {
+  position: absolute;
+  top: 24px; right: 28px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--amber); }
 /* ═══════════════════════════════════
    SAFETY PAGE
    ═══════════════════════════════════ */
@@ -456,6 +578,28 @@ img { max-width: 100%; display: block; }
 .ac-pm { background: rgba(248,155,0,0.2) !important; color: var(--amber) !important; }
 .accountability-card h4 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 12px; }
 .accountability-card p { color: var(--steel-light); font-size: 14px; line-height: 1.65; }
+
+/* Motto */
+.logo-motto {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--steel);
+  letter-spacing: 1px;
+  text-transform: none;
+}
+
+.hero-motto {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--steel-light);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  margin-top: -12px;
+}
 
 /* Signature block */
 .policy-signature {

@@ -106,6 +106,7 @@
           <span class="nav-logo-text">
             <span class="logo-khabi">KHABI</span>
             <span class="logo-eng">ENGINEERING PTY LTD</span>
+            <span class="logo-motto">Best Service First Time</span>
           </span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -115,6 +116,7 @@
         <li><a href="#" onclick="showPage('home')" data-page="home">Home</a></li>
         <li><a href="#" onclick="showPage('about')" data-page="about">About</a></li>
         <li><a href="#" onclick="showPage('services')" data-page="services">Services</a></li>
+        <li><a href="#" onclick="showPage('gallery')" data-page="gallery">Gallery</a></li>
         <li><a href="#" onclick="showPage('safety')" data-page="safety">Safety</a></li>
         <li><a href="#" onclick="showPage('contact')" data-page="contact" class="nav-cta">Contact Us</a></li>
       </ul>
@@ -616,6 +618,174 @@
 
   </div>
 
+  <!-- ═══════════════ GALLERY PAGE ═══════════════ -->
+  <div id="page-gallery" class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-slash"></div>
+      <div class="container">
+        <p class="section-eyebrow">Our Work</p>
+        <h1 class="page-hero-title">Projects &<br/><span class="accent">On-Site Gallery.</span></h1>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="construction">Construction</button>
+         <!-- <button class="filter-btn" data-filter="cleaning">Cleaning</button>-->
+          <button class="filter-btn" data-filter="renovation">Renovation</button>
+          <button class="filter-btn" data-filter="bricks">Bricks</button>
+          <button class="filter-btn" data-filter="aluminium">Aluminium</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Placeholder cards — replace src with real images -->
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-1.jpg" alt="Construction project" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Home Construction</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-3.jpg" alt="renovation" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Renovations</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-2.jpg" alt="RDP housing" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Houses</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-4.jpg" alt="renovation" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Home Renovation</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-1.jpg" alt="Renovation work" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Fence Installation</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-1.jpg" alt="Bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks Production</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-3.jpg" alt="construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Painting & Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="cleaning">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-5.jpg" alt="Industrial cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Extensions</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-1.jpg" alt="aluminium" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Aluminium Doors</span></div>
+            </div>
+                      </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-4.jpg" alt="Civil construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Civil Construction</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="br">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/brick-2.jpg" alt="Bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks Delivery</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-2.jpg" alt="aluminium-2" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Aluminium Folding Doors</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-3.jpg" alt="bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks</span></div>
+            </div>
+                    </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-6.jpg" alt="Civil construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Stairs Railing</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-5.jpg" alt="Painting works" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Building Double Storey</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-6.jpg" alt="Industrial cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Double Storey</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-7.jpg" alt="Double storey" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Office Spaces</span></div>
+            </div>
+                      </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-8.jpg" alt="Civil construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-7.jpg" alt="Painting works" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Tiling & Painting & Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-5.jpg" alt="Industrial cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Making Bricks</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-3.jpg" alt="Double storey" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Renovated Windows</span></div>
+            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <img src="" alt="" id="lightboxImg" />
+      <p id="lightboxCaption"></p>
+    </div>
+
+  </div>
+
+
   <!-- ═══════════════ CONTACT PAGE ═══════════════ -->
   <div id="page-contact" class="page">
 
@@ -724,8 +894,10 @@
           <span class="footer-logo-text">
             <span class="logo-khabi">KHABI</span>
             <span class="logo-eng">ENGINEERING PTY LTD</span>
+            <span class="logo-motto">Best Service First Time</span>
           </span>
         <p>100% Black-Owned · Est. 2013<br/>Middelburg, Mpumalanga</p>
+        <p class="hero-motto">"Best Service First Time"</p>
         <p style="margin-top:8px;">Reg No: 2013/198606/07</p>
       </div>
       <div class="footer-links">
