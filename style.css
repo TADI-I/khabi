@@ -348,6 +348,12 @@ img { max-width: 100%; display: block; }
 .contact-item a:hover { color: var(--amber); }
 .contact-compliance { margin-top: 40px; padding: 20px; background: var(--off-white); border-left: 4px solid var(--amber); }
 .contact-compliance p:last-child { font-size: 14px; color: var(--charcoal-3); margin-top: 8px; }
+.contact-map {
+  margin-top: 28px;
+  border: 1px solid #e8e8e8;
+  border-top: 3px solid var(--amber);
+  overflow: hidden;
+}
 .contact-form-wrap h2 { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-bottom: 32px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { display: flex; flex-direction: column; margin-bottom: 20px; }

@@ -74,7 +74,10 @@ window.addEventListener('scroll', () => {
 // ═══ CONTACT FORM ═══
 function submitForm() {
   const name    = document.getElementById('fname').value.trim();
+  const company = document.getElementById('fcompany').value.trim();
   const email   = document.getElementById('femail').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const service = document.getElementById('fservice').value.trim();
   const message = document.getElementById('fmessage').value.trim();
   const note    = document.getElementById('formNote');
 
@@ -89,7 +92,22 @@ function submitForm() {
     return;
   }
 
-  note.textContent = '✓ Thank you! Your enquiry has been received. We will be in touch shortly.';
+  // Build email body
+  const subject = encodeURIComponent('Website Enquiry' + (service ? ' — ' + service : ''));
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    (company ? 'Company: ' + company + '\n' : '') +
+    'Email: ' + email + '\n' +
+    (phone ? 'Phone: ' + phone + '\n' : '') +
+    (service ? 'Service Required: ' + service + '\n' : '') +
+    '\nMessage:\n' + message
+  );
+
+  // Open mail app
+  window.location.href = 'mailto:info@khabiengineering.co.za?subject=' + subject + '&body=' + body;
+
+  // Show confirmation and reset
+  note.textContent = '✓ Your mail app should open now. We will be in touch shortly.';
   note.style.color = '#2a9d5c';
 
   ['fname','fcompany','femail','fphone','fservice','fmessage'].forEach(id => {
