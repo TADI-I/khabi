@@ -76,23 +76,18 @@
     <symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
       <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
     </symbol>
-    <!-- shield / safety -->
     <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </symbol>
-    <!-- hard hat / safety -->
     <symbol id="icon-hardhat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M2 18h20v2a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-2z"/><path d="M12 2a8 8 0 0 1 8 8v8H4v-8a8 8 0 0 1 8-8z"/><path d="M9 10h6"/>
     </symbol>
-    <!-- leaf / environment -->
     <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M17 8C8 10 5.9 16.17 3.82 19.83 5.2 20.6 6.8 21 8.5 21 14.5 21 20 17 20 11V3C18 5 16 7 17 8z"/>
     </symbol>
-    <!-- alert / warning -->
     <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
     </symbol>
-    <!-- users -->
     <symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
     </symbol>
@@ -103,11 +98,11 @@
     <div class="nav-inner">
       <a href="#home" class="nav-logo" onclick="showPage('home')">
         <img src="images/logo.png" alt="Khabi Engineering" class="nav-logo-img" onerror="this.style.display='none'" />
-          <span class="nav-logo-text">
-            <span class="logo-khabi">KHABI</span>
-            <span class="logo-eng">ENGINEERING PTY LTD</span>
-            <span class="logo-motto">Best Service First Time</span>
-          </span>
+        <span class="nav-logo-text">
+          <span class="logo-khabi">KHABI</span>
+          <span class="logo-eng">ENGINEERING PTY LTD</span>
+          <span class="logo-motto">Best Service First Time</span>
+        </span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -126,25 +121,33 @@
   <!-- ═══════════════ HOME PAGE ═══════════════ -->
   <div id="page-home" class="page active">
 
-    <section class="hero">
-      <div class="hero-slash"></div>
-      <div class="hero-content">
-        <p class="hero-eyebrow">100% Black-Owned · Est. 2013 · Middelburg, Mpumalanga</p>
-        <h1 class="hero-title">Building South Africa.<br/><span class="accent">Best Service First Time.</span></h1>
-        <p class="hero-sub">Engineering, Construction, Manufacturing &amp; Cleaning Services for public and private sector clients across South Africa.</p>
-        <div class="hero-btns">
-          <button class="btn-primary" onclick="showPage('services')">Our Services</button>
-          <button class="btn-outline" onclick="showPage('contact')">Get a Quote</button>
-        </div>
+    <section class="hero" id="hero">
+      <!-- Left: photo panel with diagonal clip + scroll-close effect -->
+      <div class="hero-img-panel" id="heroImgPanel">
+        <img src="images/gallery/construction-7.jpg" alt="Khabi Engineering construction site" class="hero-img" id="heroImg" />
+        <div class="hero-img-diag" id="heroImgDiag"></div>
+        <div class="hero-img-line" id="heroImgLine"></div>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">2013</span><span class="stat-label">Established</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Years in Cleaning</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Private Clients</span></div>
-        <div class="stat-div"></div>
-        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">B-BBEE Aligned</span></div>
+      <!-- Right: text content -->
+      <div class="hero-body">
+        <div class="hero-content">
+          <p class="hero-eyebrow">100% Black-Owned · Est. 2013 · Middelburg, Mpumalanga</p>
+          <h1 class="hero-title">Building South Africa.<br/><span class="accent">Best Service First Time.</span></h1>
+          <p class="hero-sub">Engineering, Construction, Manufacturing &amp; Cleaning Services for public and private sector clients across South Africa.</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="showPage('services')">Our Services</button>
+            <button class="btn-outline" onclick="showPage('contact')">Get a Quote</button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">2013</span><span class="stat-label">Established</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Years in Cleaning</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Private Clients</span></div>
+          <div class="stat-div"></div>
+          <div class="stat"><span class="stat-num">100%</span><span class="stat-label">B-BBEE Aligned</span></div>
+        </div>
       </div>
     </section>
 
@@ -260,17 +263,11 @@
         </div>
         <div class="about-vision-mission">
           <div class="vm-card">
-            <h3>
-              <span class="vm-icon"><svg><use href="#icon-target"/></svg></span>
-              Our Vision
-            </h3>
+            <h3><span class="vm-icon"><svg><use href="#icon-target"/></svg></span>Our Vision</h3>
             <p>To be a forefront Engineering &amp; Construction industry and cleaning service provider, recognised for excellence, professionalism, and meaningful contribution to skills transfer and socio-economic growth.</p>
           </div>
           <div class="vm-card">
-            <h3>
-              <span class="vm-icon"><svg><use href="#icon-rocket"/></svg></span>
-              Our Mission
-            </h3>
+            <h3><span class="vm-icon"><svg><use href="#icon-rocket"/></svg></span>Our Mission</h3>
             <ul>
               <li>Deliver quality services right the first time</li>
               <li>Empower communities through skills development</li>
@@ -299,7 +296,6 @@
                 <li>B-Tech in Mechanical Engineering (DUT / UJ / UNISA)</li>
                 <li>Diploma in Education, Training and Development Practitioner (ETDP)</li>
                 <li>Registered HR Associate Practitioner</li>
-                
               </ul>
             </div>
             <div class="md-experience">
@@ -337,17 +333,25 @@
   <!-- ═══════════════ SERVICES PAGE ═══════════════ -->
   <div id="page-services" class="page">
 
-    <section class="page-hero">
-      <div class="page-hero-slash"></div>
-      <div class="container">
-        <p class="section-eyebrow">What We Offer</p>
-        <h1 class="page-hero-title">Services Built<br/><span class="accent">for Every Sector.</span></h1>
+    <!-- Split hero: text left, services-1.jpg right with left diagonal -->
+    <section class="page-hero page-hero--split">
+      <div class="svc-hero-body">
+        <div class="container">
+          <p class="section-eyebrow">What We Offer</p>
+          <h1 class="page-hero-title">Services Built<br/><span class="accent">for Every Sector.</span></h1>
+          <p class="svc-hero-sub">Skilled teams. Proper PPE. Right the first time — every time.</p>
+        </div>
+      </div>
+      <div class="svc-hero-img-panel">
+        <img src="images/gallery/services-1.jpg" alt="Khabi Engineering team at work" class="svc-hero-img" />
+        <div class="svc-hero-diag"></div>
+        <div class="svc-hero-line"></div>
       </div>
     </section>
 
     <section class="services-full">
       <div class="container">
-          <div class="service-detail">
+        <div class="service-detail">
           <div class="service-number">01</div>
           <div class="service-detail-content">
             <h2>Civil Engineering (Infrastructure &amp; Civil work)</h2>
@@ -362,7 +366,7 @@
             </ul>
           </div>
         </div>
-          <div class="service-detail reverse">
+        <div class="service-detail reverse">
           <div class="service-number">02</div>
           <div class="service-detail-content">
             <h2>Building &amp; Construction</h2>
@@ -376,8 +380,7 @@
             </ul>
           </div>
         </div>
-        
-        <div class="service-detail ">
+        <div class="service-detail">
           <div class="service-number">03</div>
           <div class="service-detail-content">
             <h2>Maintenance &amp; Renovations</h2>
@@ -403,7 +406,7 @@
             </ul>
           </div>
         </div>
-        <div class="service-detail ">
+        <div class="service-detail">
           <div class="service-number">05</div>
           <div class="service-detail-content">
             <h2>Manufacturing</h2>
@@ -457,18 +460,183 @@
 
   </div>
 
-  <!-- ═══════════════ SAFETY PAGE ═══════════════ -->
-  <div id="page-safety" class="page">
+  <!-- ═══════════════ GALLERY PAGE ═══════════════ -->
+  <div id="page-gallery" class="page">
 
     <section class="page-hero">
       <div class="page-hero-slash"></div>
       <div class="container">
-        <p class="section-eyebrow">Our Commitment</p>
-        <h1 class="page-hero-title">Safety, Health &amp;<br/><span class="accent">Environmental Policy.</span></h1>
+        <p class="section-eyebrow">Our Work</p>
+        <h1 class="page-hero-title">Projects &amp;<br/><span class="accent">On-Site Gallery.</span></h1>
       </div>
     </section>
 
-    <!-- Policy intro -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="construction">Construction</button>
+          <button class="filter-btn" data-filter="renovation">Renovation</button>
+          <button class="filter-btn" data-filter="bricks">Bricks</button>
+          <button class="filter-btn" data-filter="aluminium">Aluminium</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-1.jpg" alt="Home Construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Home Construction</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-3.jpg" alt="Renovations" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Renovations</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-2.jpg" alt="Homes" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Homes</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-4.jpg" alt="Home Renovation" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Home Renovation</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-1.jpg" alt="Fence Installation" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Fence Installation</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-1.jpg" alt="Bricks Production" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks Production</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-3.jpg" alt="Painting &amp; Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Painting &amp; Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-5.jpg" alt="Extensions" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Extensions</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-1.jpg" alt="Aluminium Doors" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Aluminium Doors</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-4.jpg" alt="Civil Construction" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Civil Construction</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-2.jpg" alt="Bricks Delivery" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks Delivery</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-2.jpg" alt="Aluminium Folding Doors" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Aluminium Folding Doors</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-3.jpg" alt="Bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Bricks</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-6.jpg" alt="Stairs Railing" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Stairs Railing</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-5.jpg" alt="Building Double Storey" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Building Double Storey</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-6.jpg" alt="Double Storey" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Double Storey</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-7.jpg" alt="Office Parks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Office Parks</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="construction">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/construction-8.jpg" alt="Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="renovation">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/renovation-7.jpg" alt="Tiling &amp; Painting &amp; Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Tiling &amp; Painting &amp; Plastering</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="bricks">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/bricks-5.jpg" alt="Making Bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Making Bricks</span></div>
+            </div>
+          </div>
+          <div class="gallery-item" data-category="aluminium">
+            <div class="gallery-img-wrap">
+              <img src="images/gallery/aluminium-3.jpg" alt="Renovated Windows" onerror="this.parentElement.classList.add('img-placeholder')" />
+              <div class="gallery-overlay"><span>Renovated Windows</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">&#10005;</button>
+      <img src="" alt="" id="lightboxImg" />
+      <p id="lightboxCaption"></p>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════ SAFETY PAGE ═══════════════ -->
+  <div id="page-safety" class="page">
+
+    <section class="page-hero page-hero--split">
+      <div class="svc-hero-body">
+        <div class="container">
+          <p class="section-eyebrow">Our Commitment</p>
+          <h1 class="page-hero-title">Safety, Health &amp;<br/><span class="accent">Environmental Policy.</span></h1>
+          <p class="svc-hero-sub">Zero accidents. Every person on our sites goes home safe.</p>
+        </div>
+      </div>
+      <div class="svc-hero-img-panel">
+        <img src="images/gallery/safety-1.jpg" alt="Khabi Engineering safety on site" class="svc-hero-img" />
+        <div class="svc-hero-diag"></div>
+        <div class="svc-hero-line"></div>
+      </div>
+    </section>
+
     <section class="safety-intro">
       <div class="container safety-intro-grid">
         <div class="safety-statement">
@@ -500,106 +668,37 @@
       </div>
     </section>
 
-    <!-- Standards -->
     <section class="safety-standards">
       <div class="container">
         <p class="section-eyebrow">Our Standards</p>
         <h2 class="section-title">What We Stand By</h2>
         <div class="standards-grid">
-          <div class="standard-card">
-            <span class="standard-num">01</span>
-            <p>Sustain a culture where SHE is a prime value that is not compromised.</p>
-          </div>
-          <div class="standard-card">
-            <span class="standard-num">02</span>
-            <p>Provide a healthy and safe workplace for all employees, clients, environment, and contractors.</p>
-          </div>
-          <div class="standard-card">
-            <span class="standard-num">03</span>
-            <p>Strive for zero accidents, near misses, injuries, and occupational illnesses.</p>
-          </div>
-          <div class="standard-card">
-            <span class="standard-num">04</span>
-            <p>Design clean, quiet, safe, sustainable facilities — achieved through proper housekeeping before exiting any site.</p>
-          </div>
+          <div class="standard-card"><span class="standard-num">01</span><p>Sustain a culture where SHE is a prime value that is not compromised.</p></div>
+          <div class="standard-card"><span class="standard-num">02</span><p>Provide a healthy and safe workplace for all employees, clients, environment, and contractors.</p></div>
+          <div class="standard-card"><span class="standard-num">03</span><p>Strive for zero accidents, near misses, injuries, and occupational illnesses.</p></div>
+          <div class="standard-card"><span class="standard-num">04</span><p>Design clean, quiet, safe, sustainable facilities — achieved through proper housekeeping before exiting any site.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- Commitments -->
     <section class="safety-commitments">
       <div class="container">
         <p class="section-eyebrow">How We Deliver</p>
         <h2 class="section-title">Our Commitments</h2>
         <div class="commitments-list">
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-shield"/></svg></span>
-            <div>
-              <h4>Risk Management</h4>
-              <p>Implement systems to identify, assess, monitor, and control hazards on every project.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-check"/></svg></span>
-            <div>
-              <h4>Legal Compliance</h4>
-              <p>Meet and exceed all applicable environmental, health, fire, and safety laws and regulations.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-leaf"/></svg></span>
-            <div>
-              <h4>Sustainable Development</h4>
-              <p>Promote sustainable development by integrating SHE in all relevant decision-making processes.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-gear"/></svg></span>
-            <div>
-              <h4>Safe Systems of Work</h4>
-              <p>Design, implement, provide, and enforce safe systems of work on all projects.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-alert"/></svg></span>
-            <div>
-              <h4>Hazard Planning</h4>
-              <p>Plan ahead by reviewing hazards and complying with relevant client plant safety procedures on all field visits.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-grad"/></svg></span>
-            <div>
-              <h4>Training &amp; Behaviour</h4>
-              <p>Encourage safe work behaviours and train all employees and managers in general safety practices.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-users"/></svg></span>
-            <div>
-              <h4>Worker Participation</h4>
-              <p>Involve employees at all levels in the SHE process, with commitment to consultation and participation of workers and their representatives.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-wrench"/></svg></span>
-            <div>
-              <h4>PPE Provision</h4>
-              <p>Provide all employees and contractors with all relevant, required, compliant PPE for all specific activities to be executed.</p>
-            </div>
-          </div>
-          <div class="commitment-item">
-            <span class="commit-icon"><svg><use href="#icon-target"/></svg></span>
-            <div>
-              <h4>Continual Improvement</h4>
-              <p>Sustain continual improvement by annually reviewing our policy, standards, objectives, and programmes with the intent of minimising SHE risks.</p>
-            </div>
-          </div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-shield"/></svg></span><div><h4>Risk Management</h4><p>Implement systems to identify, assess, monitor, and control hazards on every project.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-check"/></svg></span><div><h4>Legal Compliance</h4><p>Meet and exceed all applicable environmental, health, fire, and safety laws and regulations.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-leaf"/></svg></span><div><h4>Sustainable Development</h4><p>Promote sustainable development by integrating SHE in all relevant decision-making processes.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-gear"/></svg></span><div><h4>Safe Systems of Work</h4><p>Design, implement, provide, and enforce safe systems of work on all projects.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-alert"/></svg></span><div><h4>Hazard Planning</h4><p>Plan ahead by reviewing hazards and complying with relevant client plant safety procedures on all field visits.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-grad"/></svg></span><div><h4>Training &amp; Behaviour</h4><p>Encourage safe work behaviours and train all employees and managers in general safety practices.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-users"/></svg></span><div><h4>Worker Participation</h4><p>Involve employees at all levels in the SHE process, with commitment to consultation and participation of workers and their representatives.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-wrench"/></svg></span><div><h4>PPE Provision</h4><p>Provide all employees and contractors with all relevant, required, compliant PPE for all specific activities to be executed.</p></div></div>
+          <div class="commitment-item"><span class="commit-icon"><svg><use href="#icon-target"/></svg></span><div><h4>Continual Improvement</h4><p>Sustain continual improvement by annually reviewing our policy, standards, objectives, and programmes with the intent of minimising SHE risks.</p></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Accountability -->
     <section class="safety-accountability">
       <div class="container">
         <p class="section-eyebrow">Responsibility</p>
@@ -621,7 +720,6 @@
             <p>All employees have a responsibility to work safely using the training, technological resources, and safety equipment provided to them.</p>
           </div>
         </div>
-
         <div class="policy-signature">
           <div class="sig-line">
             <p class="sig-name">Ayanda Khabingesi</p>
@@ -636,174 +734,6 @@
     </section>
 
   </div>
-
-  <!-- ═══════════════ GALLERY PAGE ═══════════════ -->
-  <div id="page-gallery" class="page">
-
-    <section class="page-hero">
-      <div class="page-hero-slash"></div>
-      <div class="container">
-        <p class="section-eyebrow">Our Work</p>
-        <h1 class="page-hero-title">Projects &<br/><span class="accent">On-Site Gallery.</span></h1>
-      </div>
-    </section>
-
-    <section class="gallery-section">
-      <div class="container">
-        <div class="gallery-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="construction">Construction</button>
-         <!-- <button class="filter-btn" data-filter="cleaning">Cleaning</button>-->
-          <button class="filter-btn" data-filter="renovation">Renovation</button>
-          <button class="filter-btn" data-filter="bricks">Bricks</button>
-          <button class="filter-btn" data-filter="aluminium">Aluminium</button>
-        </div>
-        <div class="gallery-grid" id="galleryGrid">
-          <!-- Placeholder cards — replace src with real images -->
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-1.jpg" alt="Home Construction " onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Home Construction</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="renovation">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-3.jpg" alt="renovation" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Renovations</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-2.jpg" alt="Homes" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Homes</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="renovation">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-4.jpg" alt="renovation" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Home Renovation</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="renovation">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-1.jpg" alt="Fence Installation" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Fence Installation</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="bricks">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/bricks-1.jpg" alt="Bricks Production" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Bricks Production</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-3.jpg" alt="Painting & Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Painting & Plastering</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="cleaning">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-5.jpg" alt="Extensions" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Extensions</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="aluminium">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/aluminium-1.jpg" alt="aluminium" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Aluminium Doors</span></div>
-            </div>
-                      </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-4.jpg" alt="Civil construction" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Civil Construction</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="br">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/brick-2.jpg" alt="Bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Bricks Delivery</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="aluminium">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/aluminium-2.jpg" alt="aluminium-2" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Aluminium Folding Doors</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="bricks">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/bricks-3.jpg" alt="bricks" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Bricks</span></div>
-            </div>
-                    </div>
-          <div class="gallery-item" data-category="renovation">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-6.jpg" alt="Stairs Railing" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Stairs Railing</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-5.jpg" alt="Painting works" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Building Double Storey</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-6.jpg" alt="Double Storey" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Double Storey</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-7.jpg" alt="Office Parks" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Office Parks</span></div>
-            </div>
-            </div>
-          <div class="gallery-item" data-category="construction">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/construction-8.jpg" alt="Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Plastering</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="renovation">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/renovation-7.jpg" alt="Tiling & Painting & Plastering" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Tiling & Painting & Plastering</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="bricks">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/bricks-5.jpg" alt="Industrial cleaning" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Making Bricks</span></div>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="aluminium">
-            <div class="gallery-img-wrap">
-              <img src="images/gallery/aluminium-3.jpg" alt="Double storey" onerror="this.parentElement.classList.add('img-placeholder')" />
-              <div class="gallery-overlay"><span>Renovated Windows</span></div>
-            </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose">✕</button>
-      <img src="" alt="" id="lightboxImg" />
-      <p id="lightboxCaption"></p>
-    </div>
-
-  </div>
-
 
   <!-- ═══════════════ CONTACT PAGE ═══════════════ -->
   <div id="page-contact" class="page">
@@ -856,29 +786,16 @@
             <p style="margin-top:6px;font-size:13px;color:var(--steel)">Reg No: 2013/198606/07</p>
           </div>
         </div>
-
         <div class="contact-form-wrap">
           <h2>Send Us a Message</h2>
           <div class="contact-form">
             <div class="form-row">
-              <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" id="fname" placeholder="Your full name" />
-              </div>
-              <div class="form-group">
-                <label>Company</label>
-                <input type="text" id="fcompany" placeholder="Your company (optional)" />
-              </div>
+              <div class="form-group"><label>Full Name</label><input type="text" id="fname" placeholder="Your full name" /></div>
+              <div class="form-group"><label>Company</label><input type="text" id="fcompany" placeholder="Your company (optional)" /></div>
             </div>
             <div class="form-row">
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" id="femail" placeholder="your@email.com" />
-              </div>
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" id="fphone" placeholder="+27 ..." />
-              </div>
+              <div class="form-group"><label>Email Address</label><input type="email" id="femail" placeholder="your@email.com" /></div>
+              <div class="form-group"><label>Phone Number</label><input type="tel" id="fphone" placeholder="+27 ..." /></div>
             </div>
             <div class="form-group">
               <label>Service Required</label>
@@ -892,10 +809,7 @@
                 <option>General Enquiry</option>
               </select>
             </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea id="fmessage" rows="5" placeholder="Tell us about your project or enquiry..."></textarea>
-            </div>
+            <div class="form-group"><label>Message</label><textarea id="fmessage" rows="5" placeholder="Tell us about your project or enquiry..."></textarea></div>
             <button class="btn-primary full-width" onclick="submitForm()">Send Enquiry</button>
             <p class="form-note" id="formNote"></p>
           </div>
@@ -910,11 +824,11 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <img src="images/logo.png" alt="Khabi Engineering" class="footer-logo-img" onerror="this.style.display='none'" />
-          <span class="footer-logo-text">
-            <span class="logo-khabi">KHABI</span>
-            <span class="logo-eng">ENGINEERING PTY LTD</span>
-            <span class="logo-motto">Best Service First Time</span>
-          </span>
+        <span class="footer-logo-text">
+          <span class="logo-khabi">KHABI</span>
+          <span class="logo-eng">ENGINEERING PTY LTD</span>
+          <span class="logo-motto">Best Service First Time</span>
+        </span>
         <p>100% Black-Owned · Est. 2013<br/>Middelburg, Mpumalanga</p>
         <p class="hero-motto">"Best Service First Time"</p>
         <p style="margin-top:8px;">Reg No: 2013/198606/07</p>
@@ -924,6 +838,7 @@
         <a href="#" onclick="showPage('home')">Home</a>
         <a href="#" onclick="showPage('about')">About</a>
         <a href="#" onclick="showPage('services')">Services</a>
+        <a href="#" onclick="showPage('gallery')">Gallery</a>
         <a href="#" onclick="showPage('safety')">Safety Policy</a>
         <a href="#" onclick="showPage('contact')">Contact</a>
       </div>

@@ -1,3 +1,52 @@
+// ═══ HERO SCROLL ANIMATION ═══
+(function () {
+  const panel = document.getElementById('heroImgPanel');
+  const img   = document.getElementById('heroImg');
+  const diag  = document.getElementById('heroImgDiag');
+  const line  = document.getElementById('heroImgLine');
+  if (!panel || !img) return;
+
+  let ticking = false;
+
+  function updateHero() {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+
+    const scrollY   = window.scrollY;
+    const heroH     = hero.offsetHeight;
+    const progress  = Math.min(scrollY / heroH, 1);
+
+    // Clip path: diagonal closes from right as user scrolls
+    const topRight    = Math.round(100 - progress * 60);  // 100 → 40
+    const bottomRight = Math.round(85  - progress * 60);  //  85 → 25
+    panel.style.clipPath =
+      `polygon(0 0, ${topRight}% 0, ${bottomRight}% 100%, 0 100%)`;
+
+    // Parallax: image drifts upward
+    const translateY = -(progress * 40);
+    img.style.transform = `scale(1.08) translateY(${translateY}px)`;
+
+    // Curtain gradient grows from right
+    const curtain = Math.round(progress * 80);
+    diag.style.background =
+      `linear-gradient(to left, var(--charcoal) 0%, var(--charcoal) ${curtain}%, transparent ${Math.min(curtain + 30, 100)}%)`;
+
+    // Accent line fades out
+    if (line) line.style.opacity = String(Math.max(0, 1 - progress * 1.5));
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateHero);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateHero();
+})();
+
 // ═══ PAGE NAVIGATION ═══
 function showPage(page) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -20,14 +69,14 @@ document.getElementById('navToggle').addEventListener('click', () => {
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('nav');
   nav.style.boxShadow = window.scrollY > 10 ? '0 4px 24px rgba(0,0,0,0.4)' : 'none';
-});
+}, { passive: true });
 
 // ═══ CONTACT FORM ═══
 function submitForm() {
-  const name = document.getElementById('fname').value.trim();
-  const email = document.getElementById('femail').value.trim();
+  const name    = document.getElementById('fname').value.trim();
+  const email   = document.getElementById('femail').value.trim();
   const message = document.getElementById('fmessage').value.trim();
-  const note = document.getElementById('formNote');
+  const note    = document.getElementById('formNote');
 
   if (!name || !email || !message) {
     note.textContent = '⚠️ Please fill in your name, email, and message.';
@@ -92,9 +141,9 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 document.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
     const img = item.querySelector('img');
-    if (!img || item.querySelector('.img-placeholder')) return;
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightboxImg');
+    if (!img || img.parentElement.classList.contains('img-placeholder')) return;
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lightboxImg');
     const lbCaption = document.getElementById('lightboxCaption');
     lbImg.src = img.src;
     lbImg.alt = img.alt;
